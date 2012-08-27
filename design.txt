@@ -1,0 +1,111 @@
+# ORGANISM
+## GENOTYPE
+The Genotype represents the organism's predispositions. It is also the basis for what is passed on during reproduction. In stage 1 of development, the genotype values are directly checked during adversity tests.
+
+### Genotype traits:
+
+#### Mobility:
+Running, Climbing, Swimming, Jumping, Flying*
+
+#### Perception:
+Olfactory, Visual Acuity, Visual Range, Night Vision, Auditory
+
+#### Endurance:
+Stamina, Immune System, Injury Recovery, Thermal Range^, Thermal Center^
+
+#### Food:
+Preferences for different types of food, digestive efficiency for different types of food
+
+#### Physical:
+Size, Claws, Kick, Horns, Teeth, Venom*
+
+#### Cognitive:
+Memory, Problem Solving, Danger Assessment,
+
+#### Behavior:
+Burrowing*, Nest Building*, Tool Using*, Food Cacheing*
+
+*: Indicated trait has no effect at all until leveled up to a fairly high value; this represents an adaptation or strategy that is somewhat more difficult to 'find' while traversing the possibility space
+
+^: Thermal tolerance has two associated values: First, there is the ideal temperature for the organism, and second, the tolerable range. For simplicity, the ideal is always in the center of the tolerable range. The tolerable range in actual degrees climbs less than linearly (square root or 1/x or some such) with the actual stat points, to prevent organisms from trivially developing enormous tolerance ranges.
+
+## PHENOTYPE
+The Phenotype represents the organism's observable form. In stage 2 of development, these will start at low values at birth and require growth over time to reach it's adult form; the results of growth will be only partially determined by the genotype. During stage 2, these values will be directly checked against during adversity tests.
+
+### Phenotype traits:
+
+All Genotype traits.
+
+#### Vital:
+Age, Nutrition
+
+#### Food:
+Learned food preferences
+
+#### Behavior:
+Learned aptitudes?
+
+
+## SOMATOTYPE
+
+The Somatotype is the current state of the organism's body. Where the Phenotype represents the the organism's 'ideal' form if perfectly healthy, the Somatotype represents the organism's actual present state, taking into account injuries, nutrition and fatigue. In stage 3 of development, these values are checked during adversity tests. They are based directly on the phenotype values but adjusted for temporary mitigating factors such as nutritional state, fatigue, injury and disease.
+
+### Somatotype traits:
+
+All Genotype traits
+All Phentotype traits
+
+#### Vital:
+Injuries, Fatigue, Infection, Poison
+
+
+# ENVIRONMENT
+
+The environment is a persistent place in which the organisms live and evolve. Although the environment will eventually be implemented as multiple connected biomes between which organisms can migrate, initially the environment will consist of a single biome which all organisms inhabit.
+
+The environment changes over time, both according to change, and according to the actions of the player. Modification of the environment is the primary way the player controls the evolution of his organisms.
+
+## Environment traits
+Temperature, Water, Soil, Ruggedness, Forestedness
+
+## Foods
+Vegetable Food, Fruit Foods, Insect Foods, Carrion, Small Animal Foods, Large Animal Foods
+Food in early development, food will be part of the environment, and will numerically represent availability. Later, each food will have it's own traits that will be used as checks when organisms are searching for that type of food.
+
+## Predators
+Population, Size, Strength, all Mobility traits from Genotype, Venom, All perception traits from Genotype, various predatory behavioral traits.
+Eventually there should be multiple predators with their own traits; initially, just one predator.
+
+# ADVERSITIES
+Adversities are circumstances that may kill some organisms in the population. Adversities take the form of checks against the organism's stats. 
+
+# GAMEPLAY
+Gameplay proceeds through turns/rounds, in phases.
+
+## Phases:
+Environmental replenishment
+Feeding
+Environmental stresses
+Predation
+Reproduction
+Adversity
+
+### Environmental Replenishment
+During environmental replenishment, the populations of food sources and predators are replenished. The exact quantities by which they are replenished, and what the caps are, will likely need some logic, though not a full-blown ecosystem simulation.
+
+### Feeding
+During feeding, the organisms forage/hunt for food. There will have to be logic for what type of food a given organism goes for, which organisms are able to find food, how much nutrition each type of food provides, etc. Possibly animals need to be presented multiple foraging opportunities per cycle. 
+
+### Environmental Stresses
+During environmental stress calculation, the organisms are subjected to any stresses present in the environment. By default, the only normal stresses are a) being outside the appropriate temperature range, and b) having inappropriate moisture levels. However, some adversities may add additional ongoing environmental stresses, which would be checked at this time.
+
+### Predation
+During predation, the organisms are hunted by predators. The predators will have an easier time hunting and catching slower, less adapted prey. Certain defensive behaviors will help here. Also, certain strength attributes may allow an organism to actually fight off a predator, if they are high enough, though this should be difficult - strength attributes are more normally intended for the organism to catch it's own prey, should it evolve to carnivorism. Finally, in later development stages, organisms which are sick, injured or malnourished will be more tempting for predators.
+
+### Reproduction
+In this phase, the organisms reproduce. Any organism with enough nourishment can reproduce. Mating will not be an issue, as all organisms reproduce asexually. Later development stages will probably introduce a 'maturity' age threshold for reproduction, but sexual reproduction will probably never be added due to the vastly increased complexity of the 'genetics' that would be necessary.
+
+### Adversity
+In this phase, the player is presented with several options they can choose from which will manipulate the environment. At the moment, I am calling it Adversity, with the intent that all choices make the environment more taxing for the organisms, but I may introduce other types of actions as well. At the minimum, players will be presented with a selection of adversities, and they must choose one to apply. That is stage 1. In stage 2 they must choose at *least* one, buy may choose more. Stage three will introduce different *types* of adversities, perhaps allowing the player to play one of each, or some other variation. I am unsure whether the player will be able to save unused cards between rounds.
+
+
