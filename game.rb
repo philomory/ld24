@@ -10,7 +10,7 @@ module LD24
     end
     
     def play
-      say "Welcome to NATURAL SELECTION"
+      say "Welcome to ADVERSITY"
       say "You begin with 20 organisms."
       say "Over time, they eat, reproduce, flee predators, and deal with environmental hazards"
       say "Every so often, they have to face Adversity."
